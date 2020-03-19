@@ -5,7 +5,7 @@ import csv
 import codecs
 translator = Translator()
 
-file_r = open("input.txt","r")
+file_r = open("input.csv","r")
 
 #file_w = codecs.open("output.csv",mode="a",encoding='ascii')
 file_w = open("output.csv",'a')
@@ -13,8 +13,13 @@ inputs = []
 out = []
 #output = {}
 
-for i in file_r.readlines():
-    inputs.append(i.replace("\n",""))
+read = csv.reader(file_r)
+
+'''for i in file_r.readrows():
+    inputs.append(i.replace("\n",""))'''
+
+for i in read:
+	inputs.append(i[0])
 
 print(inputs)
 for i in range((len(inputs)-1)):
@@ -35,3 +40,4 @@ for i in output:
 #writer.close()
 file_r.close()
 file_w.close()
+
