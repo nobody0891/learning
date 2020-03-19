@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-require "language_converter"
+require "easy_translate"
 
 input_file = ARGV[0]
 output_file = ARGV[1]
@@ -24,7 +24,7 @@ for i in list_read do
 
 	key_var = i.to_sym
 
-	value_var = lc(i,"es-do","en")
+	value_var = EasyTranslate.translate(i,:from => :english,"en")
 	
 	hash_transilated[key_var] = value_var
 	
@@ -36,7 +36,6 @@ for i in hash_transilated do
 
 	str = (i[0].to_s)+":"+(i[1].to_s)+"\n"
 	file_write.write(str)
-	puts string
 end
 
 file_write.close
