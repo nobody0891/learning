@@ -8,6 +8,9 @@ data = con.response
 
 puts con.resp
 
+input = gets.chomp
 
+if inputs == "yes"
+	puts data
+end
 
-puts data[-1]
