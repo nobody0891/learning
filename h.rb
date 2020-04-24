@@ -10,7 +10,9 @@ puts con.resp
 
 input = gets.chomp
 
-if inputs == "yes"
+if input == "yes"
 	puts data
+else
+	puts "exiting"
 end
 
